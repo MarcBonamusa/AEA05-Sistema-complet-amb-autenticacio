@@ -1,5 +1,5 @@
 import express from 'express';
-import productRoutes from './routes/products.js';
+import productRoutes from './routes/golejadors.js';
 import laligaRouter from './routes/laliga.js';
 import methodOverride from 'method-override';
 import {PORT, SECRET_JWT_KEY} from './config.js'
@@ -30,7 +30,7 @@ app.use((req,res,next)=>{
     next() 
 })
 
-app.use('/products', productRoutes);
+app.use('/golejadors', productRoutes);
 app.use('/laliga', laligaRouter); 
 
 app.get('/',(req,res)=>{

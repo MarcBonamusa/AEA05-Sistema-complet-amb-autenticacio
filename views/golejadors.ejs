@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benvingut</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Gestió de golejadors</h1>
+        <h2><%- htmlMessage %></h2>
+    </header>
+    <main>
+        <section>
+            <h2>Taula de golejadors</h2>
+            <ul class="product-list">
+                <li class="product-item list-header">
+                    <strong>NOM</strong>
+                    <span>EQUIP</span>
+                    <span>GOLS</span>
+                </li>
+
+                <% data.goleadores.forEach(jugador => { %>
+                    <li class="product-item">
+                        <strong><%= jugador.nombre %></strong>
+                        <span><%= jugador.equipo %></span>
+                        <span><%= jugador.goles %></span>
+                        <span><a href="/golejadors/<%=jugador.pos %>">Detall del jugador</a></span>
+                        <span><a href="/golejadors/editProducte/<%=jugador.pos %>">Editar jugador</a></span>
+                    </li>
+                <% }) %>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

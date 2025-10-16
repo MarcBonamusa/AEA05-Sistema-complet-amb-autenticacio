@@ -7,18 +7,11 @@ const readData = () => JSON.parse(fs.readFileSync('./db/db.json'));
 
 const writeData = (data) => fs.writeFileSync('./db/db.json', JSON.stringify(data, null, 4));
 
-const getLoggedInUser = (req) => {
-    return { name: req.session.user?.name || "Convidat" }; 
-};
-
 router.get('/', (req, res) => {
+    const user = { name: "Marc" };
+    const htmlMessage = `<a href="/">Home</a>`;
     const data = readData();
-    const user = getLoggedInUser(req);
-    
-    const htmlMessage = `<p>Consulta la <strong>classificació</strong> actual de La Lliga.</p>
-                         <a href="/">Home</a>`;
-                         
-    res.render("laliga", { user, data, htmlMessage }); 
+    res.render("laliga", { user, data, htmlMessage });
 });
 
 router.get('/:id', (req, res) => {
