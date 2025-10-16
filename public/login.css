@@ -104,6 +104,59 @@ span {
     background-color: #a71d2a;
 }
 
+#titulo-bienvenida {
+    /* Título (Hola Usuario) */
+    font-size: 2em;
+    font-weight: 700;
+    color: #1e3a8a; /* Azul oscuro */
+    margin-bottom: 10px;
+}
+
+#descripcion-admin {
+    /* Descripción */
+    font-size: 1.1em;
+    color: #475569; /* Gris medio */
+    margin-bottom: 30px;
+}
+
+#close-session {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background-color: #ef4444; /* Rojo */
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#close-session:hover {
+    background-color: #b91c1c; /* Rojo oscuro al pasar el ratón */
+    transform: translateY(-1px);
+}
+
+#enlace-admin {
+    /* Enlace "Seguir administrando" (Acción primaria) */
+    display: inline-block;
+    width: 95%;
+    padding: 12px;
+    background-color: #3b82f6; /* Azul primario */
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#enlace-admin:hover {
+    background-color: #1e40af; /* Azul más oscuro */
+    transform: translateY(-1px);
+}
+
 /* Missatges d'estat */
 #login-form span,
 #register-form span {

@@ -77,7 +77,6 @@ section h2 {
 .product-item {
     display: grid;
     grid-template-columns: 2.5fr 2fr 1fr repeat(3, 0.5fr); 
-    /* 2.5fr: Nombre | 2fr: Equipo | 1fr: Goles | 3 x 0.5fr: Botones de Acción */
     gap: 20px;
     align-items: center;
     padding: 22px 30px;

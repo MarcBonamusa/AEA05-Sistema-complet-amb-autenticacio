@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
     const data = readData();
     res.render("golejadors", { user, data, htmlMessage });
 });
-router.get('/editProducte/:id', (req, res) => {
+router.get('/edit_golejador/:id', (req, res) => {
     const user = { name: "Marc" };
     const htmlMessage = `<a href="/golejadors">Llistat de productes</a>`;
     
