@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificació La Lliga</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Gestió de Productes per <%= user.name %>!</h1>
+        <h2><%- htmlMessage %></h2>
+    </header>
+    <main>
+        <section>
+            <h2>Classificació La Lliga</h2>
+            <ul class="product-list">
+                <li class="product-item list-header">
+                    <strong>EQUIP</strong>
+                    <span>CIUTAT</span>
+                    <span>POSICIÓ</span>
+                </li>
+                
+                <% data.laliga.forEach(equip => { %>
+                    <li class="product-item">
+                        <strong><%= equip.nombre %></strong>
+                        <span><%= equip.ciudad %></span>
+                        <span><%= equip.posicion_actual %></span>
+                    </li>
+                <% }) %>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
