@@ -12,53 +12,53 @@ router.get('/', (req, res) => {
     const data = readData();
     res.render("golejadors", { user, data, htmlMessage });
 });
-router.get('/edit_golejador/:id', (req, res) => {
+router.get('/edit_golejador/:pos', (req, res) => {
     const user = { name: "Marc" };
-    const htmlMessage = `<a href="/golejadors">Llistat de productes</a>`;
+    const htmlMessage = `<a href="/golejadors">Llistat de golejadors</a>`;
     
     const data = readData();
-    const product = data.golejadors.find(p => p.id === parseInt(req.params.id));
+    const golejador = data.goleadores.find(p => p.pos === parseInt(req.params.pos));
     
-    if (!product) return res.status(404).send('Product not found');
+    if (!golejador) return res.status(404).send('Golejador not found');
 
-    res.render("edit_product", { user, product, htmlMessage });
+    res.render("edit_golejador", { user, golejador, htmlMessage });
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:pos', (req, res) => {
     const user = { name: "Marc" };
-    const htmlMessage = `<a href="/golejadors">Llistat de productes</a>`;
+    const htmlMessage = `<a href="/golejadors">Llistat de golejadors</a>`;
     const data = readData();
-    const product = data.golejadors.find(p => p.id === parseInt(req.params.id));
-    if (!product) return res.status(404).send('Product not found');
-    res.render("product", { user, product, htmlMessage });
+    const golejador = data.goleadores.find(p => p.pos === parseInt(req.params.pos));
+    if (!golejador) return res.status(404).send('Golejador not found');
+    res.render("golejador", { user, golejador, htmlMessage });
 });
 
 router.post('/', (req, res) => {
     const data = readData();
     const { name, price, category } = req.body;
     if (!name || !price || !category) return res.status(400).send('All fields are required');
-    const newProduct = { id: data.golejadors.length + 1, name, price, category };
-    data.golejadors.push(newProduct);
+    const newProduct = { id: data.goleadores.length + 1, name, price, category };
+    data.goleadores.push(newProduct);
     writeData(data);
     res.json(newProduct);
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:pos', (req, res) => {
     const data = readData();
-    const id = parseInt(req.params.id);
-    const productIndex = data.golejadors.findIndex(p => p.id === id);
-    if (productIndex === -1) return res.status(404).send('Product not found');
-    data.golejadors[productIndex] = { ...data.golejadors[productIndex], ...req.body };
+    const id = parseInt(req.params.pos);
+    const golejadorIndex = data.goleadores.findIndex(p => p.pos === id);
+    if (golejadorIndex === -1) return res.status(404).send('Golejador not found');
+    data.goleadores[golejadorIndex] = { ...data.goleadores[golejadorIndex], ...req.body };
     writeData(data);
     res.redirect('/golejadors');
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:pos', (req, res) => {
     const data = readData();
-    const id = parseInt(req.params.id);
-    const productIndex = data.golejadors.findIndex(p => p.id === id);
+    const id = parseInt(req.params.pos);
+    const productIndex = data.goleadores.findIndex(p => p.pos === id);
     if (productIndex === -1) return res.status(404).send('Product not found');
-    data.golejadors.splice(productIndex, 1);
+    data.goleadores.splice(productIndex, 1);
     writeData(data);
     res.json({ message: 'Product deleted successfully' });
 });
