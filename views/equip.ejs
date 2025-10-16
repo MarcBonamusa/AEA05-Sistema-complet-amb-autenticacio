@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benvingut</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Gestió del Equip: <%= equip.nombre %>!</h1>
+        <h2><%- htmlMessage %></h2>
+    </header>
+    <main>
+        <section>
+            <h2>Detalls del Equip</h2>
+            <ul class="product-list">
+                
+                    <li class="product-item">
+                        <strong><%= equip.nombre %></strong>
+                        <span>Equip: <%= equip.ciudad %></span>
+                        <span>Gols: <%= equip.posicion_actual %></span>
+                    </li>
+                
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

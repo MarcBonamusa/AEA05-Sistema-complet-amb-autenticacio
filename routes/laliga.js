@@ -3,26 +3,38 @@ import fs from 'fs';
 
 const router = express.Router();
 
-const readData = () => JSON.parse(fs.readFileSync('./db/db.json'));
-
+const readData = () => JSON.parse(fs.readFileSync('./db/db.json'))
 const writeData = (data) => fs.writeFileSync('./db/db.json', JSON.stringify(data, null, 4));
 
 router.get('/', (req, res) => {
     const user = { name: "Marc" };
     const htmlMessage = `<a href="/">Home</a>`;
     const data = readData();
-    res.render("laliga", { user, data, htmlMessage });
+    res.render("laliga", { user, data, htmlMessage }); 
+});
+
+router.get('/edit_classificacio/:id', (req, res) => {
+    const user = { name: "Marc" };
+    const htmlMessage = `<a href="/laliga">Llistat d'equips</a>`;
+    
+    const data = readData();
+
+    const equip = data.laliga.find(e => e.id === parseInt(req.params.id));
+    
+    if (!equip) return res.status(404).send('Equip no trobat');
+
+    res.render("edit_classificacio", { user, equip, htmlMessage }); 
 });
 
 router.get('/:id', (req, res) => {
+    const user = { name: "Marc" };
+    const htmlMessage = `<a href="/laliga">Llistat d'equips</a>`;
     const data = readData();
-    const id = parseInt(req.params.id);
-    
-    const equip = data.laliga.find(e => e.id === id); 
+    const equip = data.laliga.find(e => e.id === parseInt(req.params.id));
     
     if (!equip) return res.status(404).send('Equip no trobat');
-    
-    res.json(equip);
+
+    res.render("equip", { user, equip, htmlMessage });
 });
 
 router.post('/', (req, res) => {
@@ -49,7 +61,7 @@ router.put('/:id', (req, res) => {
     
     data.laliga[equipIndex] = { ...data.laliga[equipIndex], ...req.body };
     writeData(data);
-    res.json({ message: "Equip actualitzat correctament" });
+    res.redirect('/laliga');
 });
 
 router.delete('/:id', (req, res) => {
