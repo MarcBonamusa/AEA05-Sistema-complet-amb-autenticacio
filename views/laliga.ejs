@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Classificació La Lliga</title>
     <link rel="stylesheet" type="text/css" href="/styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 </head>
 <body>
     <header>
@@ -26,6 +27,9 @@
                         <strong><%= equip.nombre %></strong>
                         <span><%= equip.ciudad %></span>
                         <span><%= equip.posicion_actual %></span>
+                        <span><a href="/laliga/<%=equip.id %>"><i class="fas fa-info-circle"></i></a></span>
+                        <span><a href="/laliga/edit_classificacio/<%=equip.id %>"><i class="fas fa-edit"></i></a></span>
+                        <span><a href="/laliga/edit_classificacio/<%=equip.id %>"><i class="fas fa-trash-alt"></i></a></span>
                     </li>
                 <% }) %>
             </ul>

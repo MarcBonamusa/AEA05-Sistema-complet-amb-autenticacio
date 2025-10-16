@@ -1,144 +1,145 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+* {
     margin: 0;
     padding: 0;
-    background-color: #f7f9fc;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    min-height: 100vh;
     color: #2c3e50;
     line-height: 1.6;
 }
 
 header {
-    background-color: #f7f9fc;
-    color: #004d40;
-    padding: 25px 10px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    padding: 45px 20px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    border-bottom: 3px solid #004d40;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    border-bottom: 3px solid #1e3a8a;
+    margin-bottom: 40px;
 }
 
 header h1 {
-    margin: 0 0 5px 0;
-    font-size: 2.2em;
-    font-weight: 600;
-    color: #004d40;
+    font-size: 2.4em;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
 }
 
 header h2 {
-    margin: 0;
-    font-size: 1.2em;
+    font-size: 1.1em;
+    color: #64748b;
     font-weight: 400;
-    color: #555555;
 }
 
 main {
-    padding: 20px;
-    max-width: 900px;
+    max-width: 1100px;
     margin: 0 auto;
+    padding: 0 20px 50px 20px;
 }
 
 section h2 {
-    color: #004d40;
-    border-bottom: 2px solid #e0e0e0;
-    padding-bottom: 10px;
-    margin-top: 0;
+    font-size: 1.7em;
+    color: #1e3a8a;
+    margin-bottom: 28px;
+    font-weight: 600;
+    padding-left: 8px;
+    border-left: 4px solid #3b82f6;
 }
 
 .product-list {
     list-style: none;
-    padding: 0;
-    margin: 20px 0;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    border-radius: 12px;
     overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+}
+
+.list-header {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+    color: #ffffff;
+    font-weight: 600;
+    padding: 20px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.88em;
+}
+
+.list-header strong,
+.list-header span {
+    color: #ffffff !important;
 }
 
 .product-item {
-    padding: 18px 25px;
-    border-bottom: 1px solid #e0e0e0;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 15px;
+    grid-template-columns: 2.5fr 2fr 1fr repeat(3, 0.5fr); 
+    /* 2.5fr: Nombre | 2fr: Equipo | 1fr: Goles | 3 x 0.5fr: Botones de Acción */
+    gap: 20px;
     align-items: center;
-    transition: background-color 0.2s;
+    padding: 22px 30px;
+    border-bottom: 1px solid #e2e8f0;
+    transition: all 0.25s ease;
+    background-color: #ffffff;
+}
+
+.list-header {
+    display: grid;
+    grid-template-columns: 2.5fr 2fr 1fr repeat(3, 0.5fr);
+    gap: 20px;
+}
+
+.product-item:nth-child(even):not(.list-header) {
+    background-color: #f8fafc;
+}
+
+.product-item:not(.list-header):hover {
+    background-color: #eff6ff;
+    transform: translateX(4px);
+    box-shadow: inset 4px 0 0 #3b82f6;
 }
 
 .product-item:last-child {
     border-bottom: none;
 }
 
-.product-item:hover {
-    background-color: #e6f7ff;
-}
-
-.product-item:nth-child(odd) {
-    background-color: #f0f4f7;
-}
-
-.product-item:nth-child(even) {
-    background-color: #ffffff;
-}
-
 .product-item strong {
-    font-size: 1.1em;
+    font-size: 1.08em;
     font-weight: 600;
-    color: #2c3e50;
+    color: #1e293b;
 }
 
 .product-item span {
-    font-size: 0.95em;
-    color: #555;
+    font-size: 0.98em;
+    color: #475569;
+    font-weight: 500;
 }
 
-.product-form {
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    border: 1px solid #e0e0e0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 30px;
+.product-item a {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    background-color: #eff6ff;
+    border: 1px solid #bfdbfe;
+    transition: all 0.2s ease;
+    display: inline-block;
+    text-align: center;
+    font-size: 0.92em;
 }
 
-.product-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: #2c3e50;
+.product-item a:hover {
+    background-color: #3b82f6;
+    color: #ffffff;
+    border-color: #3b82f6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
-.product-form input {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #e0e0e0;
-    border-radius: 5px;
-    box-sizing: border-box;
-    transition: border-color 0.3s;
-}
-
-.product-form input:focus {
-    border-color: #ffb300;
-    outline: none;
-}
-
-.product-form button {
-    background-color: #ffb300;
-    color: #004d40;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-    transition: background-color 0.3s, transform 0.1s;
-}
-
-.product-form button:hover {
-    background-color: #ffc107;
-    transform: translateY(-1px);
-}
-
-p {
-    color: #555;
+.product-item a:active {
+    transform: translateY(0);
 }

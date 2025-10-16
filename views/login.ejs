@@ -11,11 +11,11 @@
 <body>
     <div class="container">
         <% if (typeof username!='undefined' ) { %>
-            <div class="form-container">
-                <h2>Hola <%=username%>!</h2>
-                <p>Estas en el panel de admin</p>
+            <div class="form-container" id="panel-admin">
+                <h2 id="titulo-bienvenida">Hola <%=username%>!</h2>
+                <p id="descripcion-admin">Estas en el panel de admin</p>
                 <button id="close-session">Cerrar sesión</button>
-                <a href="/protected">Seguir administrando</a>
+                <a href="/protected" id="enlace-admin">Seguir administrando</a>
             </div>
         <% } %>
 
