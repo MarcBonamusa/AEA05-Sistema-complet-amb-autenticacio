@@ -29,7 +29,15 @@
                         <span><%= equip.posicion_actual %></span>
                         <span><a href="/laliga/<%=equip.id %>"><i class="fas fa-info-circle"></i></a></span>
                         <span><a href="/laliga/edit_classificacio/<%=equip.id %>"><i class="fas fa-edit"></i></a></span>
-                        <span><a href="/laliga/edit_classificacio/<%=equip.id %>"><i class="fas fa-trash-alt"></i></a></span>
+                        <span>
+                            <form action="/laliga/<%= equip.id %>?_method=DELETE" method="POST" style="display:inline;">
+                                <button type="submit"
+                                    class="action-button delete-button" 
+                                    onclick="return confirm('Estàs segur que vols eliminar <%= equip.nombre %>?');">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </form>
+                        </span>
                     </li>
                 <% }) %>
             </ul>

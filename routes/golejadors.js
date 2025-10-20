@@ -60,7 +60,7 @@ router.delete('/:pos', (req, res) => {
     if (productIndex === -1) return res.status(404).send('Product not found');
     data.goleadores.splice(productIndex, 1);
     writeData(data);
-    res.json({ message: 'Product deleted successfully' });
+    res.redirect('/golejadors')
 });
 
 export default router;

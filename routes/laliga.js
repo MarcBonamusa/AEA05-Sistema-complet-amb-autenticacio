@@ -74,7 +74,7 @@ router.delete('/:id', (req, res) => {
     
     data.laliga.splice(equipIndex, 1);
     writeData(data);
-    res.json({ message: "Equip eliminat correctament" });
+    res.redirect('/laliga');
 });
 
 export default router;
