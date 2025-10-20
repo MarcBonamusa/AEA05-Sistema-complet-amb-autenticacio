@@ -12,15 +12,15 @@
     </header>
     
     <main>
-        <form action="/goljeadors/<%= golejador.pos %>?_method=PUT" method="POST">
-            <label for="name">Nom:</label>
-            <input type="text" id="name" name="name" value="<%= golejador.nombre %>" required>
+        <form action="/golejadors/<%= golejador.pos %>?_method=PUT" method="POST">
+            <label for="nombre">Nom:</label>
+            <input type="text" id="nombre" name="nombre" value="<%= golejador.nombre %>" required>
             
-            <label for="category">Equip:</label>
-            <input type="text" id="category" name="category" value="<%= golejador.equipo %>" required>
+            <label for="equipo">Equip:</label>
+            <input type="text" id="equipo" name="equipo" value="<%= golejador.equipo %>" required>
 
-            <label for="price">Gols:</label>
-            <input type="number" id="price" name="price" value="<%= golejador.goles %>" step="0.01" required>
+            <label for="goles">Gols:</label>
+            <input type="number" id="goles" name="goles" value="<%= golejador.goles %>" step="0.01" required>
 
             <button type="submit">Desar Canvis</button>
         </form>

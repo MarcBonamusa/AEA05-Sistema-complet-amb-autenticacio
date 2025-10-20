@@ -45,9 +45,12 @@ router.post('/', (req, res) => {
 
 router.put('/:pos', (req, res) => {
     const data = readData();
-    const id = parseInt(req.params.pos);
-    const golejadorIndex = data.goleadores.findIndex(p => p.pos === id);
-    if (golejadorIndex === -1) return res.status(404).send('Golejador not found');
+    const id = parseInt(req.params.id);
+    
+    const golejadorIndex = data.goleadores.findIndex(e => e.id === id); 
+    
+    if (golejadorIndex === -1) return res.status(404).send('Jugador no trobat');
+    
     data.goleadores[golejadorIndex] = { ...data.goleadores[golejadorIndex], ...req.body };
     writeData(data);
     res.redirect('/golejadors');
