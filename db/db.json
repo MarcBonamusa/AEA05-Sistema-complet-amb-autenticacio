@@ -1,1 +1,168 @@
-{"goleadores":[{"pos":1,"nombre":"Kylian Mbappé","equipo":"Real Madrid","goles":"9"},{"pos":2,"nombre":"Julián Álvarez","equipo":"Atlético Madrid","goles":6},{"pos":3,"nombre":"Karl Etta Eyong","equipo":"Villarreal / Levante","goles":5},{"pos":4,"nombre":"Vinícius Júnior","equipo":"Real Madrid","goles":5},{"pos":5,"nombre":"Cucho Hernández","equipo":"Real Betis","goles":4},{"pos":6,"nombre":"Borja Iglesias","equipo":"Celta Vigo","goles":4},{"pos":7,"nombre":"Robert Lewandowski","equipo":"Barcelona","goles":4},{"pos":8,"nombre":"Vedat Muriqi","equipo":"Mallorca","goles":4},{"pos":9,"nombre":"Iván Romero","equipo":"Levante","goles":4}],"laliga":[{"id":1,"nombre":"Real Madrid C.F.","ciudad":"Madrid","posicion_actual":"1"},{"id":2,"nombre":"F.C. Barcelona","ciudad":"Barcelona","posicion_actual":2},{"id":3,"nombre":"Villarreal C.F.","ciudad":"Villarreal","posicion_actual":3},{"id":4,"nombre":"Real Betis Balompié","ciudad":"Sevilla","posicion_actual":4},{"id":5,"nombre":"Atlético de Madrid","ciudad":"Madrid","posicion_actual":5},{"id":6,"nombre":"Sevilla F.C.","ciudad":"Sevilla","posicion_actual":6},{"id":7,"nombre":"Elche C.F.","ciudad":"Elche","posicion_actual":7},{"id":8,"nombre":"Athletic Club","ciudad":"Bilbao","posicion_actual":8},{"id":9,"nombre":"R.C.D. Espanyol","ciudad":"Barcelona","posicion_actual":9},{"id":10,"nombre":"Deportivo Alavés","ciudad":"Vitoria-Gasteiz","posicion_actual":10},{"id":11,"nombre":"Getafe C.F.","ciudad":"Getafe","posicion_actual":11},{"id":12,"nombre":"C.A. Osasuna","ciudad":"Pamplona","posicion_actual":12},{"id":13,"nombre":"Levante U.D.","ciudad":"Valencia","posicion_actual":13},{"id":14,"nombre":"Rayo Vallecano","ciudad":"Madrid","posicion_actual":14},{"id":15,"nombre":"Valencia C.F.","ciudad":"Valencia","posicion_actual":15},{"id":16,"nombre":"R.C. Celta de Vigo","ciudad":"Vigo","posicion_actual":16},{"id":17,"nombre":"Real Oviedo","ciudad":"Oviedo","posicion_actual":17},{"id":18,"nombre":"Girona F.C.","ciudad":"Girona","posicion_actual":18}]}
+{
+    "goleadores": [
+        {
+            "pos": 1,
+            "nombre": "Kylian Mbappé",
+            "equipo": "Real Madrid",
+            "goles": "9"
+        },
+        {
+            "pos": 2,
+            "nombre": "Julián Álvarez",
+            "equipo": "Atlético Madrid",
+            "goles": 6
+        },
+        {
+            "pos": 3,
+            "nombre": "Karl Etta Eyong",
+            "equipo": "Villarreal / Levante",
+            "goles": 5
+        },
+        {
+            "pos": 4,
+            "nombre": "Vinícius Júnior",
+            "equipo": "Real Madrid",
+            "goles": 5
+        },
+        {
+            "pos": 5,
+            "nombre": "Cucho Hernández",
+            "equipo": "Real Betis",
+            "goles": 4
+        },
+        {
+            "pos": 6,
+            "nombre": "Borja Iglesias",
+            "equipo": "Celta Vigo",
+            "goles": 4
+        },
+        {
+            "pos": 7,
+            "nombre": "Robert Lewandowski",
+            "equipo": "Barcelona",
+            "goles": 4
+        },
+        {
+            "pos": 8,
+            "nombre": "Vedat Muriqi",
+            "equipo": "Mallorca",
+            "goles": 4
+        },
+        {
+            "pos": 9,
+            "nombre": "Iván Romero",
+            "equipo": "Levante",
+            "goles": 4
+        }
+    ],
+    "laliga": [
+        {
+            "id": 1,
+            "nombre": "Real Madrid C.F.",
+            "ciudad": "Madrid",
+            "posicion_actual": "1"
+        },
+        {
+            "id": 2,
+            "nombre": "F.C. Barcelona",
+            "ciudad": "Barcelona",
+            "posicion_actual": 2
+        },
+        {
+            "id": 3,
+            "nombre": "Villarreal C.F.",
+            "ciudad": "Villarreal",
+            "posicion_actual": 3
+        },
+        {
+            "id": 4,
+            "nombre": "Real Betis Balompié",
+            "ciudad": "Sevilla",
+            "posicion_actual": 4
+        },
+        {
+            "id": 5,
+            "nombre": "Atlético de Madrid",
+            "ciudad": "Madrid",
+            "posicion_actual": 5
+        },
+        {
+            "id": 6,
+            "nombre": "Sevilla F.C.",
+            "ciudad": "Sevilla",
+            "posicion_actual": 6
+        },
+        {
+            "id": 7,
+            "nombre": "Elche C.F.",
+            "ciudad": "Elche",
+            "posicion_actual": 7
+        },
+        {
+            "id": 8,
+            "nombre": "Athletic Club",
+            "ciudad": "Bilbao",
+            "posicion_actual": 8
+        },
+        {
+            "id": 9,
+            "nombre": "R.C.D. Espanyol",
+            "ciudad": "Barcelona",
+            "posicion_actual": 9
+        },
+        {
+            "id": 10,
+            "nombre": "Deportivo Alavés",
+            "ciudad": "Vitoria-Gasteiz",
+            "posicion_actual": 10
+        },
+        {
+            "id": 11,
+            "nombre": "Getafe C.F.",
+            "ciudad": "Getafe",
+            "posicion_actual": 11
+        },
+        {
+            "id": 12,
+            "nombre": "C.A. Osasuna",
+            "ciudad": "Pamplona",
+            "posicion_actual": 12
+        },
+        {
+            "id": 13,
+            "nombre": "Levante U.D.",
+            "ciudad": "Valencia",
+            "posicion_actual": 13
+        },
+        {
+            "id": 14,
+            "nombre": "Rayo Vallecano",
+            "ciudad": "Madrid",
+            "posicion_actual": 14
+        },
+        {
+            "id": 15,
+            "nombre": "Valencia C.F.",
+            "ciudad": "Valencia",
+            "posicion_actual": 15
+        },
+        {
+            "id": 16,
+            "nombre": "R.C. Celta de Vigo",
+            "ciudad": "Vigo",
+            "posicion_actual": 16
+        },
+        {
+            "id": 17,
+            "nombre": "Real Oviedo",
+            "ciudad": "Oviedo",
+            "posicion_actual": 17
+        },
+        {
+            "id": 18,
+            "nombre": "Girona F.C.",
+            "ciudad": "Girona",
+            "posicion_actual": 18
+        }
+    ]
+}

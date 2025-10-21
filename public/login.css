@@ -1,25 +1,3 @@
-@media (max-width: 768px) {
-
-    /* Per a pantalles petites */
-    .form-container h2 {
-        font-size: 1.2em;
-        /* Redueix la mida de la lletra */
-        margin-bottom: 10px;
-    }
-
-    label {
-        display: block;
-        /* Assegura't que els labels es mostren */
-        margin-bottom: 5px;
-    }
-
-    input {
-        width: 100%;
-        /* Inputs ocupen tot l'ample del contenidor */
-    }
-}
-
-/* Estils globals */
 body {
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
@@ -49,7 +27,6 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Estils per als formularis */
 .form-container {
     margin-bottom: 20px;
     height: 295px;
@@ -95,7 +72,6 @@ span {
     color: #666;
 }
 
-/* Botó de tancar sessió */
 #close-session {
     background-color: #dc3545;
 }
@@ -105,17 +81,15 @@ span {
 }
 
 #titulo-bienvenida {
-    /* Título (Hola Usuario) */
     font-size: 2em;
     font-weight: 700;
-    color: #1e3a8a; /* Azul oscuro */
+    color: #1e3a8a;
     margin-bottom: 10px;
 }
 
 #descripcion-admin {
-    /* Descripción */
     font-size: 1.1em;
-    color: #475569; /* Gris medio */
+    color: #475569;
     margin-bottom: 30px;
 }
 
@@ -123,7 +97,7 @@ span {
     width: 100%;
     padding: 12px;
     margin-bottom: 15px;
-    background-color: #ef4444; /* Rojo */
+    background-color: #ef4444;
     color: #ffffff;
     border: none;
     border-radius: 8px;
@@ -134,16 +108,15 @@ span {
 }
 
 #close-session:hover {
-    background-color: #b91c1c; /* Rojo oscuro al pasar el ratón */
+    background-color: #b91c1c;
     transform: translateY(-1px);
 }
 
 #enlace-admin {
-    /* Enlace "Seguir administrando" (Acción primaria) */
     display: inline-block;
     width: 95%;
     padding: 12px;
-    background-color: #3b82f6; /* Azul primario */
+    background-color: #3b82f6;
     color: #ffffff;
     text-decoration: none;
     border-radius: 8px;
@@ -153,11 +126,10 @@ span {
 }
 
 #enlace-admin:hover {
-    background-color: #1e40af; /* Azul más oscuro */
+    background-color: #1e40af;
     transform: translateY(-1px);
 }
 
-/* Missatges d'estat */
 #login-form span,
 #register-form span {
     font-size: 0.9em;

@@ -95,6 +95,7 @@ section h2 {
 }
 
 .product-list {
+    margin-top: 25px;
     list-style: none;
     background: #ffffff;
     border-radius: 12px;
