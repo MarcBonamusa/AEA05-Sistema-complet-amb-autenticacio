@@ -6,6 +6,10 @@ const router = express.Router();
 const readData = () => JSON.parse(fs.readFileSync('./db/db.json'));
 const writeData = (data) => fs.writeFileSync('./db/db.json', JSON.stringify(data));
 
+router.get('/create', (req, res) => {
+    res.render("create_golejador")
+}) 
+
 router.get('/', (req, res) => {
     const user = { name: "Marc" };
     const htmlMessage = `<a href="/">Home</a>`;
@@ -33,21 +37,28 @@ router.get('/:pos', (req, res) => {
     res.render("golejador", { user, golejador, htmlMessage });
 });
 
-router.post('/', (req, res) => {
+router.post('/createGolejador/', (req, res) => {
     const data = readData();
-    const { name, price, category } = req.body;
-    if (!name || !price || !category) return res.status(400).send('All fields are required');
-    const newProduct = { id: data.goleadores.length + 1, name, price, category };
-    data.goleadores.push(newProduct);
+    const { nom, equip, gols } = req.body;
+    if (!nom || !equip || !gols) {
+        return res.status(400).send('Tots els camps (nom, equip, gols) són obligatoris');
+    }
+    const newGolejador = { 
+        pos: data.goleadores.length + 1,
+        nombre: nom,
+        equipo: equip,
+        goles: parseInt(gols)
+    };
+    data.goleadores.push(newGolejador);
     writeData(data);
-    res.json(newProduct);
+    res.redirect('/golejadors');
 });
 
 router.put('/:pos', (req, res) => {
     const data = readData();
-    const id = parseInt(req.params.id);
+    const id = parseInt(req.params.pos);
     
-    const golejadorIndex = data.goleadores.findIndex(e => e.id === id); 
+    const golejadorIndex = data.goleadores.findIndex(e => e.pos === id); 
     
     if (golejadorIndex === -1) return res.status(404).send('Jugador no trobat');
     

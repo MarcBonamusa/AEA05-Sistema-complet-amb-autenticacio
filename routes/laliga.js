@@ -6,6 +6,10 @@ const router = express.Router();
 const readData = () => JSON.parse(fs.readFileSync('./db/db.json'))
 const writeData = (data) => fs.writeFileSync('./db/db.json', JSON.stringify(data, null, 4));
 
+router.get('/create', (req, res) => {
+    res.render("create_classificacio")
+}) 
+
 router.get('/', (req, res) => {
     const user = { name: "Marc" };
     const htmlMessage = `<a href="/">Home</a>`;
@@ -37,18 +41,21 @@ router.get('/:id', (req, res) => {
     res.render("equip", { user, equip, htmlMessage });
 });
 
-router.post('/', (req, res) => {
+router.post('/createClassificacio/', (req, res) => {
     const data = readData();
-    const body = req.body;
-    
-    const newEquip = { 
-        id: data.laliga.length > 0 ? data.laliga[data.laliga.length - 1].id + 1 : 1,
-        ...body 
+    const { equip, ciutat, posicio } = req.body;
+    if (!equip || !ciutat || !posicio) {
+        return res.status(400).send('Tots els camps (equip, ciutat, posicio) són obligatoris');
+    }
+    const nouEquip = { 
+        id: data.laliga.length + 1,
+        nombre: equip,
+        ciudad: ciutat,
+        posicion_actual: parseInt(posicio)
     };
-    
-    data.laliga.push(newEquip);
+    data.laliga.push(nouEquip);
     writeData(data);
-    res.json(newEquip);
+    res.redirect('/laliga');
 });
 
 router.put('/:id', (req, res) => {

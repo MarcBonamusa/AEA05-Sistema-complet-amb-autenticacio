@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear Nou Pokémon</title>
+    <title>Crear Nou Golejador</title>
     <link rel="stylesheet" href="/nou_css.css">
 </head>
 <body>
@@ -13,21 +13,18 @@
     </header>
     
     <main>
-        <form action="/golejadors/create_golejador" method="POST">
+        <form action="/golejadors/createGolejador" method="POST">
             
-            <label for="name">Nom:</label>
-            <input type="text" id="name" name="name" required>
+            <label for="nom">Nom:</label>
+            <input type="text" id="nom" name="nom" required>
             
-            <label for="type">Tipus:</label>
-            <input type="text" id="type" name="type" required>
+            <label for="equip">Equip:</label>
+            <input type="text" id="equip" name="equip" required>
 
-            <label for="generation">Generació:</label>
-            <input type="number" id="generation" name="generation" step="1" required>
+            <label for="gols">Gols:</label>
+            <input type="number" id="gols" name="gols" step="1" required>
 
-            <label for="imatge">Imatge (URL opcional):</label>
-            <input type="text" id="imatge" name="imatge">
-
-            <button type="submit">Crear Pokémon</button>
+            <button type="submit">Afegir Golejador</button>
         </form>
     </main>
 </body>
